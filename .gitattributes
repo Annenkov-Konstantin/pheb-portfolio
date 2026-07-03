@@ -1,0 +1,17 @@
+# Унифицированные переносы строк для всех текстовых файлов
+* text=auto eol=lf
+
+# Явно указать для конкретных типов
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+
+# Бинарные файлы не трогать
+*.png binary
+*.jpg binary
+*.gif binary
+*.ttf binary
+*.woff binary
+*.woff2 binary

@@ -1,0 +1,17 @@
+# Системные файлы
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Редакторы кода
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node.js (если вдруг появится)
+node_modules/
+npm-debug.log
+
+# Логи и временные файлы
+*.log
