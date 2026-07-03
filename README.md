@@ -67,23 +67,31 @@
 
 ```
 pheb-portfolio/
-├── index.html # Главная страница
-├── about.html # Обо мне
-├── portfolio.html # Портфолио
-├── contact.html # Контакты
-├── post.php # Обработчик формы обратной связи
+├── index.html              # Главная страница
+├── about.html              # Обо мне
+├── portfolio.html          # Портфолио
+├── contact.html            # Контакты
+├── post.php                # Обработчик формы обратной связи
 ├── css/
-│ └── styles.css # Основные стили
+│   └── styles.css          # Основные стили
 ├── js/
-│ ├── main.js # Основная логика сайта
-│ ├── script.js # Вспомогательные скрипты
-│ ├── tilt.jquery.min.js # jQuery-плагин для 3D-эффекта наклона карточек
-│ └── data/
-│ └── portfolio-data.js # Данные проектов (массив)
+│   ├── main.js             # Основная логика сайта
+│   ├── script.js           # Вспомогательные скрипты
+│   ├── tilt.jquery.min.js  # jQuery-плагин для 3D-эффекта наклона карточек
+│   └── data/
+│       └── portfolio-data.js   # Данные проектов (массив)
 ├── assets/
-│ ├── fonts/ # Variable fonts (Inter, Montserrat)
-│ └── img/ # Изображения, OG-картинка, превью
+│   ├── fonts/              # Variable fonts (Inter, Montserrat)
+│   └── img/                # Изображения, OG-картинка, превью
 ├── svg/
-│ └── sprite.svg # SVG-спрайт с иконками
+│   └── sprite.svg          # SVG-спрайт с иконками
 └── README.md
 ```
+
+## 🔮 Возможные улучшения
+
+- [ ] Переписать на React + TypeScript
+- [ ] Добавить тёмную/светлую тему
+- [ ] Интеграция с CMS для управления проектами
+- [ ] Добавить блог-секцию
+- [ ] Перевод на несколько языков
