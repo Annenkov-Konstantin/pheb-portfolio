@@ -10,18 +10,21 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $to = "pheb@list.ru";
 $subject = "Новая заявка с сайта pheb.ru";
 
+
+// 🍯 ПРОВЕРКА HONEYPOT
+// Если поле website_url заполнено — это бот
+if (!empty($_POST['website_url'])) {
+    // Тихо перенаправляем на главную с "успешным" статусом
+    // Бот думает, что всё ок, но письмо не отправляется
+    header('Location: /?sent=success');
+    exit;
+}
+
 // Получаем данные из формы
 $name = isset($_POST['name']) ? trim($_POST['name']) : '';
 $email = isset($_POST['email']) ? trim($_POST['email']) : '';
 $phone = isset($_POST['phone']) ? trim($_POST['phone']) : '';
 $message = isset($_POST['message']) ? trim($_POST['message']) : '';
-
-// Защита от honeypot (если добавили скрытое поле)
-if (!empty($_POST['website'])) {
-    http_response_code(200);
-    echo json_encode(['success' => true]);
-    exit;
-}
 
 // Валидация на стороне сервера
 $errors = [];
@@ -49,8 +52,7 @@ if (preg_match("/[\r\n]/", $name) || preg_match("/[\r\n]/", $email)) {
 
 // Если есть ошибки — возвращаем ошибку
 if (!empty($errors)) {
-    http_response_code(400);
-    echo json_encode(['success' => false, 'errors' => $errors]);
+    header('Location: /?sent=error');
     exit;
 }
 
@@ -73,14 +75,12 @@ $headers .= "X-Mailer: PHP/" . phpversion();
 // Отправляем письмо
 $send = mail($to, $subject, $body, $headers);
 
-
-// Возвращаем результат через редирект (НЕ через JSON!)
+// Возвращаем результат через редирект
 if ($send) {
     header('Location: /?sent=success');
     exit;
 } else {
     header('Location: /?sent=error');
     exit;
-}
-
+} 
 ?>

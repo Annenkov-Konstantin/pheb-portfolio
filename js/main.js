@@ -61,7 +61,8 @@ const MODAL_PRESETS = {
 function showModal (config) {
   const template = document.getElementById('modalTemplate')
   if (!template) return
-
+    // Сохраняем элемент, который открыл модалку (для возврата фокуса)
+  const triggerElement = document.activeElement
   // Клонируем содержимое шаблона
   const modalClone = template.content.cloneNode(true)
 
@@ -99,8 +100,27 @@ function showModal (config) {
   const modal = new bootstrap.Modal(modalElement)
   modal.show()
 
-  // Удаляем из DOM после закрытия
+  // Убираем фокус ДО закрытия модалки
+  modalElement.addEventListener('hide.bs.modal', () => {
+    // Снимаем фокус с активного элемента (кнопки закрытия)
+    // ДО того, как Bootstrap добавит aria-hidden
+    if (
+      document.activeElement &&
+      modalElement.contains(document.activeElement)
+    ) {
+      document.activeElement.blur()
+    }
+  })
+
+  // После закрытия возвращаем фокус и удаляем модалку
   modalElement.addEventListener('hidden.bs.modal', () => {
+    // Возвращаем фокус к элементу, который открыл модалку
+    if (triggerElement && typeof triggerElement.focus === 'function') {
+      // Небольшая задержка, чтобы DOM успел обновиться
+      setTimeout(() => triggerElement.focus(), 50)
+    }
+
+    // Удаляем модалку из DOM
     modalElement.remove()
   })
 }
@@ -316,4 +336,48 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('DOMContentLoaded', () => {
   document.body.classList.add('loaded')
+})
+
+// ============================================
+// АНТИСПАМ
+// ============================================
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('contactForm')
+  if (!form) return
+
+  const formLoadTime = Date.now()
+
+  const honeypot = document.createElement('input')
+  honeypot.type = 'text'
+  honeypot.name = 'website_url'
+  honeypot.className = 'oh-pot'
+  honeypot.tabIndex = -1
+  honeypot.autocomplete = 'off'
+  honeypot.setAttribute('aria-hidden', 'true')
+
+  // ✅ Находим кнопку отправки
+  const submitButton = form.querySelector('button[type="submit"]')
+  
+  // ✅ Вставляем honeypot ПЕРЕД кнопкой
+  if (submitButton) {
+    form.insertBefore(honeypot, submitButton)
+  } else {
+    // Фолбэк: если кнопка не найдена, добавляем в конец
+    form.appendChild(honeypot)
+  }
+
+  form.addEventListener('submit', e => {
+    if (honeypot.value !== '') {
+      e.preventDefault()
+      console.log('Honeypot сработал')
+      return false
+    }
+
+    const elapsedSeconds = (Date.now() - formLoadTime) / 1000
+    if (elapsedSeconds < 3) {
+      e.preventDefault()
+      console.log('Слишком быстро:', elapsedSeconds, 'сек')
+      return false
+    }
+  })
 })
