@@ -125,6 +125,7 @@ function showModal (config) {
   })
 }
 
+
 // ============================================
 // ОБРАБОТКА ПАРАМЕТРОВ URL
 // ============================================
@@ -355,28 +356,20 @@ document.addEventListener('DOMContentLoaded', () => {
   honeypot.autocomplete = 'off'
   honeypot.setAttribute('aria-hidden', 'true')
 
-  // ✅ Находим кнопку отправки
-  const submitButton = form.querySelector('button[type="submit"]')
-  
-  // ✅ Вставляем honeypot ПЕРЕД кнопкой
-  if (submitButton) {
-    form.insertBefore(honeypot, submitButton)
-  } else {
-    // Фолбэк: если кнопка не найдена, добавляем в конец
-    form.appendChild(honeypot)
-  }
+  // Добавить в конец
+  form.appendChild(honeypot)
+
 
   form.addEventListener('submit', e => {
     if (honeypot.value !== '') {
       e.preventDefault()
-      console.log('Honeypot сработал')
       return false
     }
 
     const elapsedSeconds = (Date.now() - formLoadTime) / 1000
     if (elapsedSeconds < 3) {
       e.preventDefault()
-      console.log('Слишком быстро:', elapsedSeconds, 'сек')
+      //console.log('Слишком быстро:', elapsedSeconds, 'сек')
       return false
     }
   })
