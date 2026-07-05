@@ -111,8 +111,7 @@ pheb-portfolio/
 ├── contact.html # Контакты
 ├── post.php # Обработчик формы обратной связи
 ├── css/
-│ ├── styles.css # Основные стили
-│ └── bootstrap.min.css
+│ └── styles.css # Основные стили
 ├── js/
 │ ├── main.js # Основная логика сайта
 │ ├── scripts.js # Вспомогательные скрипты (navbar shrink)
