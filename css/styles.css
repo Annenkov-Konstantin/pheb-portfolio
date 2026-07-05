@@ -1071,9 +1071,21 @@ ul.contact-container {
   }
 }
 
+@media (max-width: 500px) {
+  .portfolio-modal .portfolio-modal-title {
+    font-size: 2rem;
+  }
+}
+
 @media (max-width: 480px) {
   .contact-container {
     grid-template-columns: 1fr; /* 1 колонка на мобильном */
+  }
+}
+
+@media (max-width: 458px) {
+  .portfolio-modal .portfolio-modal-title {
+    font-size: 1.75rem;
   }
 }
 
@@ -1084,6 +1096,12 @@ ul.contact-container {
   .nav-logo-portfolio {
     align-items: flex-start;
     padding-bottom: 0.5em;
+  }
+}
+
+@media (max-width: 410px) {
+  .portfolio-modal .portfolio-modal-title {
+    font-size: 1.55rem;
   }
 }
 
@@ -1109,12 +1127,15 @@ ul.contact-container {
   .divider-custom {
     margin: 0;
   }
+  .portfolio-modal .portfolio-modal-title {
+    font-size: 1.25rem;
+  }
 }
 
 @media (max-width: 320px) {
+  .portfolio-modal .portfolio-modal-title,
   .portfolio-modal .portfolio-modal-title {
-    font-size: 1.75rem;
-    line-height: 1.75rem;
+    font-size: 1rem;
   }
 }
 

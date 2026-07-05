@@ -393,3 +393,38 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 })
+
+
+// ============================================
+// Дополнение schema в портфолио (Хуже для SEO, поэтому пока не использую))
+// ============================================
+/* function generateSchemaOrg() {
+  // Проверяем, что мы на странице портфолио
+  const portfolioGrid = document.getElementById('portfolioGrid')
+  if (!portfolioGrid) return // Если нет grid — выходим, мы не на портфолио
+
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    'name': 'Портфолио — Константин Анненков',
+    'description': 'Примеры моих работ: SPA-магазины, React-приложения, веб-сервисы с интеграцией API',
+    'url': 'https://pheb.ru/portfolio.html',
+    'mainEntity': {
+      '@type': 'ItemList',
+      'itemListElement': portfolioItems.map((item, index) => ({
+        '@type': 'ListItem',
+        'position': index + 1,
+        'name': item.title,
+        'description': item.description
+      }))
+    }
+  }
+
+  const script = document.createElement('script')
+  script.type = 'application/ld+json'
+  script.textContent = JSON.stringify(schema, null, 2)
+  document.head.appendChild(script)
+} */
+
+// Вызов функции при загрузке страницы
+//document.addEventListener('DOMContentLoaded', generateSchemaOrg)

@@ -35,6 +35,22 @@ export const portfolioItems = [
     url: ''
   },
   {
+  id: 'slozhno-sosredotochitsya',
+  title: 'Сложно сосредоточиться',
+  imageSmall: 'assets/img/portfolio/webp/slozhno_sosredotochitsya-400.webp',
+  imageLarge: 'assets/img/portfolio/webp/slozhno_sosredotochitsya-800.webp',
+  imageWidth: 800,
+  imageHeight: 500,
+  alt: 'Сложно сосредоточиться — адаптивная статья с тремя темами оформления',
+  modalIcon: 'fa-solid fa-brain', // Иконка мозга (тема концентрации)
+  description:
+    'Адаптивная одностраничная статья о концентрации внимания в неоновом стиле. Реализовано три темы оформления (светлая, тёмная, автоматическая) с сохранением выбора в localStorage, мозаичная галерея изображений на CSS Grid и адаптивная типографика через clamp().',
+  technologies:
+    'HTML5, CSS3 (Grid, Flexbox, Custom Properties), Vanilla JavaScript, IBM Plex Mono, prefers-color-scheme, localStorage',
+  githubUrl: 'https://github.com/Annenkov-Konstantin/slozhno-sosredotochitsya-fd',
+  url: 'https://annenkov-konstantin.github.io/slozhno-sosredotochitsya-fd/'
+},
+  {
     id: 'ono-tebe-nado',
     title: 'Оно тебе надо',
     imageSmall: 'assets/img/portfolio/webp/ono_tebe_nado-400.webp',
