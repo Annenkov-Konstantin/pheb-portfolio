@@ -112,7 +112,6 @@ pheb-portfolio/
 ├── post.php # Обработчик формы обратной связи
 ├── css/
 │ ├── styles.css # Основные стили
-│ └── purged/ # Очищенный Bootstrap через PurgeCSS
 │ └── bootstrap.min.css
 ├── js/
 │ ├── main.js # Основная логика сайта
