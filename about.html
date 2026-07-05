@@ -7,21 +7,24 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
-    <!-- Базовые мета-теги -->
+    <!-- Базовые мета-теги (УНИКАЛЬНЫЕ для страницы "Обо мне") -->
     <meta
       name="description"
-      content="Константин Анненков — Frontend Developer. Опыт 12 лет в управлении проектами. Специализируюсь на React и TypeScript."
+      content="Узнайте больше обо мне: 12+ лет управленческого опыта, специализация на React и TypeScript. Создаю современные веб-приложения с фокусом на качество и производительность."
     />
     <meta name="author" content="Константин Анненков" />
-    <title>Константин Анненков — Frontend Developer</title>
+    <title>Обо мне — Константин Анненков | Frontend Developer</title>
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="profile" />
     <meta property="og:url" content="https://pheb.ru/about.html" />
-    <meta property="og:title" content="Обо мне — Константин Анненков" />
+    <meta
+      property="og:title"
+      content="Обо мне — Константин Анненков | Frontend Developer"
+    />
     <meta
       property="og:description"
-      content="Frontend-разработчик (React, TypeScript). Более 12 лет опыта в управлении творческими проектами. Создаю современные веб-приложения с фокусом на чистую архитектуру и качество кода."
+      content="12+ лет управленческого опыта, специализация на React и TypeScript. Создаю современные веб-приложения."
     />
     <meta
       property="og:image"
@@ -33,10 +36,13 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://pheb.ru/about.html" />
-    <meta name="twitter:title" content="Обо мне — Константин Анненков" />
+    <meta
+      name="twitter:title"
+      content="Обо мне — Константин Анненков | Frontend Developer"
+    />
     <meta
       name="twitter:description"
-      content="Frontend-разработчик (React, TypeScript). Более 12 лет опыта в управлении творческими проектами."
+      content="12+ лет управленческого опыта, специализация на React и TypeScript."
     />
     <meta
       name="twitter:image"
@@ -48,7 +54,12 @@
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
-    <!-- Preload шрифтов -->
+    <!-- Preconnect к CDN -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link rel="preconnect" href="https://ajax.googleapis.com" crossorigin />
+
+    <!-- Preload основных шрифтов -->
     <link
       rel="preload"
       as="font"
@@ -70,17 +81,53 @@
       rel="stylesheet"
     />
 
-    <!-- Font Awesome icons -->
-    <script
-      src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
+    <!-- Font Awesome icons Webfont-версия (~60 КБ) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
       crossorigin="anonymous"
-    ></script>
+      referrerpolicy="no-referrer"
+    />
 
     <!-- Core theme CSS -->
     <link href="css/styles.css" rel="stylesheet" />
+
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "mainEntity": {
+          "@type": "Person",
+          "name": "Константин Анненков",
+          "jobTitle": "Frontend Developer",
+          "description": "Специализируюсь на React и TypeScript. 12+ лет управленческого опыта.",
+          "url": "https://pheb.ru",
+          "image": "https://pheb.ru/assets/img/my_2.jpg",
+          "sameAs": [
+            "https://github.com/Annenkov-Konstantin",
+            "https://vk.com/id577721488"
+          ],
+          "knowsAbout": [
+            "React",
+            "TypeScript",
+            "JavaScript",
+            "HTML5",
+            "CSS3",
+            "PHP"
+          ]
+        }
+      }
+    </script>
   </head>
 
   <body id="page-top">
+    <!-- Ссылка для клавиатурной навигации -->
+    <a href="#main-content" class="skip-link sr-only sr-only-focusable">
+      Перейти к основному содержимому
+    </a>
+
     <!-- Navigation -->
     <nav
       id="mainNav"
@@ -133,72 +180,80 @@
       </div>
     </nav>
 
-    <!-- Masthead & About Section Combined -->
-    <section class="masthead_2 page-section_2 bg-primary text-white flex">
-      <div
-        class="container d-flex align-items-center justify-content-center h-100"
-      >
-        <!-- Обертка с ограниченной шириной для красоты -->
-        <div class="content-wrapper content-wrapper-limited row w-100">
-          <!-- Фото -->
-          <div class="col-lg-5 col-md-12 text-center mb-4 mb-lg-0">
-            <img
-              class="masthead-avatar_2 tilt mx-auto d-block"
-              src="assets/img/my_2.jpg"
-              alt="Константин Анненков"
-            />
-          </div>
-
-          <!-- Текст -->
-          <div class="col-lg-7 col-md-12 text-start ps-lg-5">
-            <div class="subheading-divider">
-              <!-- Заголовок -->
-              <h2 class="page-section-heading_2 text-uppercase mb-0">
-                <span class="letter">О</span><span class="letter">б</span
-                ><span class="letter">о&ensp;</span><span class="letter">м</span
-                ><span class="letter">н</span><span class="letter">е</span>
-              </h2>
-
-              <!-- Разделитель -->
-              <div
-                class="divider-custom divider-light justify-content-start mb-0"
-              >
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon">
-                  <i class="fa-brands fa-readme"></i>
-                </div>
-                <div class="divider-custom-line"></div>
-              </div>
+    <main id="main-content">
+      <!-- Masthead & About Section Combined -->
+      <section class="masthead_2 page-section_2 bg-primary text-white flex">
+        <div
+          class="container d-flex align-items-center justify-content-center h-100"
+        >
+          <!-- Обертка с ограниченной шириной для красоты -->
+          <div class="content-wrapper content-wrapper-limited row w-100">
+            <!-- Фото -->
+            <div class="col-lg-5 col-md-12 text-center mb-4 mb-lg-0">
+              <img
+                class="masthead-avatar_2 tilt mx-auto d-block"
+                src="assets/img/my_2.jpg"
+                alt="Константин Анненков"
+                max-width="350"
+                max-height="464"
+                fetchpriority="high"
+              />
             </div>
+
             <!-- Текст -->
-            <p class="masthead-subheading font-weight-light mb-2">
-              Я Frontend-разработчик, специализирующийся на React и TypeScript.
-            </p>
+            <div class="col-lg-7 col-md-12 text-start ps-lg-5">
+              <div class="subheading-divider">
+                <!-- Заголовок -->
+                <h2 class="page-section-heading_2 text-uppercase mb-0">
+                  <span class="letter">О</span><span class="letter">б</span
+                  ><span class="letter">о&ensp;</span
+                  ><span class="letter">м</span><span class="letter">н</span
+                  ><span class="letter">е</span>
+                </h2>
 
-            <p class="masthead-subheading font-weight-light mb-2">
-              До перехода в IT более 12 лет руководил творческим коллективом и
-              работал специалистом по технической подготовке материалов. Этот
-              опыт научил меня управлять процессами, соблюдать дедлайны в
-              условиях многозадачности и выстраивать чёткую коммуникацию с
-              заказчиками.
-            </p>
+                <!-- Разделитель -->
+                <div
+                  class="divider-custom divider-light justify-content-start mb-0"
+                >
+                  <div class="divider-custom-line"></div>
+                  <div class="divider-custom-icon">
+                    <i class="fa-brands fa-readme"></i>
+                  </div>
+                  <div class="divider-custom-line"></div>
+                </div>
+              </div>
 
-            <p class="masthead-subheading font-weight-light mb-2">
-              Во фронтенде меня привлекла возможность объединять инженерную
-              точность и визуальную эстетику. Сейчас я создаю современные
-              веб-приложения, уделяя особое внимание чистой архитектуре,
-              типизации и качеству кода.
-            </p>
+              <!-- Текст -->
+              <p class="masthead-subheading font-weight-light mb-2">
+                Я Frontend-разработчик, специализирующийся на React и
+                TypeScript.
+              </p>
 
-            <p class="masthead-subheading font-weight-light mb-2">
-              Параллельно развиваю собственные проекты: рефакторю сайт pheb.ru с
-              jQuery/PHP на React + TypeScript, поддерживаю сервисы с
-              интеграцией внешних API (Yandex SpeechKit, ScreenshotMachine).
-            </p>
+              <p class="masthead-subheading font-weight-light mb-2">
+                До перехода в IT более 12 лет руководил творческим коллективом и
+                работал специалистом по технической подготовке материалов. Этот
+                опыт научил меня управлять процессами, соблюдать дедлайны в
+                условиях многозадачности и выстраивать чёткую коммуникацию с
+                заказчиками.
+              </p>
+
+              <p class="masthead-subheading font-weight-light mb-2">
+                Во фронтенде меня привлекла возможность объединять инженерную
+                точность и визуальную эстетику. Сейчас я создаю современные
+                веб-приложения, уделяя особое внимание чистой архитектуре,
+                типизации и качеству кода.
+              </p>
+
+              <p class="masthead-subheading font-weight-light mb-2">
+                Параллельно развиваю собственные проекты: рефакторю сайт pheb.ru
+                с jQuery/PHP на React + TypeScript, поддерживаю сервисы с
+                интеграцией внешних API (Yandex SpeechKit, ScreenshotMachine).
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
     <!-- Footer -->
     <footer class="theFooter">
@@ -224,16 +279,22 @@
          ============================================ -->
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
 
     <!-- jQuery (нужен для tilt-эффекта) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+      defer
+    ></script>
 
     <!-- Tilt-эффект для фото -->
-    <script src="js/tilt.jquery.min.js"></script>
+    <script src="js/tilt.jquery.min.js" defer></script>
 
     <!-- Start Bootstrap scripts (navbar shrink, scrollspy) -->
-    <script src="js/scripts.js"></script>
+    <script type="module" src="js/scripts.js"></script>
 
     <!-- Кастомные скрипты (модалки, tilt инициализация) -->
     <script type="module" src="js/main.js"></script>

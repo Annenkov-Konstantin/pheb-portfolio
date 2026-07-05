@@ -106,7 +106,6 @@ pheb-portfolio/
 └── README.md
 ```
 
-
 ## 🔮 Возможные улучшения
 
 - [ ] Переписать на React + TypeScript

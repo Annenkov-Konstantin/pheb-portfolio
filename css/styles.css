@@ -104,6 +104,21 @@ a:hover {
   color: var(--color-accent-hover);
 }
 
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
 /* ============================================
    НАВИГАЦИЯ
    ============================================ */
@@ -380,6 +395,74 @@ div.col-lg-7.col-md-12.text-start.ps-lg-5 {
   .portfolio-item-caption-content {
   font-size: 1.5rem;
   color: var(--color-accent);
+}
+
+/* ============================================
+   SKELETON-ЗАГРУЗЧИКИ ДЛЯ ПОРТФОЛИО
+   ============================================ */
+.portfolio-skeleton {
+  animation: fadeIn 0.3s ease;
+}
+
+.skeleton-image {
+  position: relative;
+  overflow: hidden;
+  background: #2c3e50;
+}
+
+.skeleton-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#portfolioGrid {
+  min-height: 560px; /* Под количество карточек */
+}
+
+/* Плавное появление реальных карточек */
+#portfolioGrid .portfolio-item {
+  animation: fadeInUp 0.4s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ============================================

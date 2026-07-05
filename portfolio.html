@@ -7,18 +7,21 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
-    <!-- Базовые мета-теги -->
+    <!-- Базовые мета-теги (УНИКАЛЬНЫЕ для страницы "Портфолио") -->
     <meta
       name="description"
-      content="Портфолио Константина Анненкова — Frontend Developer. Примеры работ: Web-ларёк, Stellar Burger, Speech Yandex-API Service, Оно тебе надо."
+      content="Портфолио Константина Анненкова — Frontend Developer. Примеры работ: Web-ларёк, Stellar Burger, Speech Yandex-API Service, Оно тебе надо. Pixel-perfect вёрстка, React, TypeScript, PHP."
     />
     <meta name="author" content="Константин Анненков" />
-    <title>Константин Анненков — Портфолио</title>
+    <title>Портфолио — Константин Анненков | Frontend Developer</title>
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://pheb.ru/portfolio.html" />
-    <meta property="og:title" content="Портфолио — Константин Анненков" />
+    <meta
+      property="og:title"
+      content="Портфолио — Константин Анненков | Frontend Developer"
+    />
     <meta
       property="og:description"
       content="Мои проекты: SPA-магазины на TypeScript, React-приложения, веб-сервисы на PHP с интеграцией внешних API. Pixel-perfect вёрстка и чистая архитектура."
@@ -33,7 +36,10 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://pheb.ru/portfolio.html" />
-    <meta name="twitter:title" content="Портфолио — Константин Анненков" />
+    <meta
+      name="twitter:title"
+      content="Портфолио — Константин Анненков | Frontend Developer"
+    />
     <meta
       name="twitter:description"
       content="Мои проекты: SPA-магазины на TypeScript, React-приложения, веб-сервисы на PHP с интеграцией внешних API."
@@ -47,6 +53,11 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+    <!-- Preconnect к CDN -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link rel="preconnect" href="https://ajax.googleapis.com" crossorigin />
 
     <!-- Preload основных шрифтов -->
     <link
@@ -64,23 +75,80 @@
       crossorigin
     />
 
+    <!-- Preload LCP-изображения -->
+    <link
+      rel="preload"
+      as="image"
+      href="assets/img/portfolio/webp/web_larek-400.webp"
+      type="image/webp"
+      fetchpriority="high"
+    />
+
     <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
 
-    <!-- Font Awesome icons -->
-    <script
-      src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
+    <!-- Font Awesome icons Webfont-версия (~60 КБ) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
       crossorigin="anonymous"
-    ></script>
+      referrerpolicy="no-referrer"
+    />
 
     <!-- Core theme CSS -->
     <link href="css/styles.css" rel="stylesheet" />
+
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Портфолио — Константин Анненков",
+        "description": "Примеры моих работ: SPA-магазины, React-приложения, веб-сервисы с интеграцией API",
+        "url": "https://pheb.ru/portfolio.html",
+        "mainEntity": {
+          "@type": "ItemList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Web-ларёк",
+              "description": "Интерактивный магазин с корзиной и адаптивной вёрсткой"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Stellar Burger",
+              "description": "SPA-приложение для заказа бургеров на React"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Speech Yandex-API Service",
+              "description": "Веб-сервис с интеграцией Yandex SpeechKit API"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Оно тебе надо",
+              "description": "Лендинг с pixel-perfect вёрсткой"
+            }
+          ]
+        }
+      }
+    </script>
   </head>
 
   <body id="page-top">
+    <!-- Ссылка для клавиатурной навигации -->
+    <a href="#main-content" class="skip-link sr-only sr-only-focusable">
+      Перейти к основному содержимому
+    </a>
+
     <!-- Navigation -->
     <nav
       id="mainNav"
@@ -130,34 +198,83 @@
       </div>
     </nav>
 
-    <!-- Portfolio Section -->
-    <section class="page-section_3 portfolio" id="portfolio">
-      <div class="container">
-        <div class="subheading-divider">
-          <!-- Portfolio Section Heading с анимацией -->
-          <h2
-            class="page-section-heading page-section-heading-portfolio text-center text-uppercase"
-          >
-            <span class="letter">П</span><span class="letter">о</span
-            ><span class="letter">р</span><span class="letter">т</span
-            ><span class="letter">ф</span><span class="letter">о</span
-            ><span class="letter">л</span><span class="letter">и</span
-            ><span class="letter">о</span>
-          </h2>
+    <main id="main-content">
+      <!-- Portfolio Section -->
+      <section class="page-section_3 portfolio" id="portfolio">
+        <div class="container">
+          <div class="subheading-divider">
+            <!-- Portfolio Section Heading с анимацией -->
+            <h2
+              class="page-section-heading page-section-heading-portfolio text-center text-uppercase"
+            >
+              <span class="letter">П</span><span class="letter">о</span
+              ><span class="letter">р</span><span class="letter">т</span
+              ><span class="letter">ф</span><span class="letter">о</span
+              ><span class="letter">л</span><span class="letter">и</span
+              ><span class="letter">о</span>
+            </h2>
 
-          <!-- Icon Divider -->
-          <div class="divider-custom">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon">
-              <i class="fa-solid fa-laptop"></i>
+            <!-- Icon Divider -->
+            <div class="divider-custom">
+              <div class="divider-custom-line"></div>
+              <div class="divider-custom-icon">
+                <i class="fa-solid fa-laptop"></i>
+              </div>
+              <div class="divider-custom-line"></div>
             </div>
-            <div class="divider-custom-line"></div>
+          </div>
+
+          <!-- Portfolio Grid Items — сюда JS отрендерит карточки -->
+          <div class="row justify-content-center" id="portfolioGrid">
+            <!-- ПЕРВОЕ изображение — статичное в HTML (для LCP) -->
+            <div class="col-md-6 col-lg-4 mb-5">
+              <div class="portfolio-item mx-auto" data-portfolio-id="web-larek">
+                <div
+                  class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
+                >
+                  <div
+                    class="portfolio-item-caption-content text-center text-white"
+                  >
+                    <i class="fas fa-plus fa-3x"></i>
+                  </div>
+                </div>
+                <img
+                  class="img-fluid"
+                  src="assets/img/portfolio/webp/web_larek-400.webp"
+                  srcset="
+                    assets/img/portfolio/webp/web_larek-400.webp 400w,
+                    assets/img/portfolio/webp/web_larek-800.webp 800w
+                  "
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 388px"
+                  alt="Web-ларёк — интернет-магазин на TypeScript"
+                  width="400"
+                  height="250"
+                  fetchpriority="high"
+                  loading="eager"
+                  elementtiming="lcp-image"
+                />
+              </div>
+            </div>
+            <!-- Остальные 5 карточек Skeleton-загрузчики (будут заменены реальными карточками) -->
+            <div class="col-md-6 col-lg-4 mb-5 portfolio-skeleton">
+              <div class="skeleton-image"></div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-5 portfolio-skeleton">
+              <div class="skeleton-image"></div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-5 portfolio-skeleton">
+              <div class="skeleton-image"></div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-5 portfolio-skeleton">
+              <div class="skeleton-image"></div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-5 portfolio-skeleton">
+              <div class="skeleton-image"></div>
+            </div>
           </div>
         </div>
-        <!-- Portfolio Grid Items — сюда JS отрендерит карточки -->
-        <div class="row justify-content-center" id="portfolioGrid"></div>
-      </div>
-    </section>
+      </section>
+    </main>
 
     <!-- Footer -->
     <footer class="theFooter">
@@ -189,7 +306,17 @@
               <i class="fas fa-plus fa-3x"></i>
             </div>
           </div>
-          <img class="img-fluid" src="" alt="" />
+          <img
+            class="img-fluid"
+            src=""
+            srcset=""
+            sizes="(max-width: 768px) 100vw, 388px"
+            alt=""
+            width="400"
+            height="250"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       </div>
     </template>
@@ -273,13 +400,18 @@
          ============================================ -->
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
 
-    <!-- jQuery (нужен для tilt-эффекта) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+    <!-- jQuery (нужен для tilt-эффекта): загружается асинхронно -->
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+      defer
+    ></script>
     <!-- Tilt-эффект для фото -->
-    <script src="js/tilt.jquery.min.js"></script>
+    <script src="js/tilt.jquery.min.js" defer></script>
 
     <!-- Start Bootstrap scripts (navbar shrink, scrollspy) -->
     <script type="module" src="js/scripts.js"></script>

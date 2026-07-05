@@ -61,7 +61,7 @@ const MODAL_PRESETS = {
 function showModal (config) {
   const template = document.getElementById('modalTemplate')
   if (!template) return
-    // Сохраняем элемент, который открыл модалку (для возврата фокуса)
+  // Сохраняем элемент, который открыл модалку (для возврата фокуса)
   const triggerElement = document.activeElement
   // Клонируем содержимое шаблона
   const modalClone = template.content.cloneNode(true)
@@ -124,7 +124,6 @@ function showModal (config) {
     modalElement.remove()
   })
 }
-
 
 // ============================================
 // ОБРАБОТКА ПАРАМЕТРОВ URL
@@ -192,17 +191,25 @@ function renderPortfolioGrid () {
 
   if (!grid || !template) return
 
-  portfolioItems.forEach(item => {
-    const clone = template.content.cloneNode(true)
+  // НЕ очищаем grid полностью — первое изображение уже в HTML
+  // Удаляем только skeleton-загрузчики
+  const skeletons = grid.querySelectorAll('.portfolio-skeleton')
+  skeletons.forEach(skeleton => skeleton.remove())
 
+  // Рендерим карточки, начиная со ВТОРОЙ (первая уже в HTML)
+  portfolioItems.slice(1).forEach((item, index) => {
+    const clone = template.content.cloneNode(true)
     const card = clone.querySelector('.portfolio-item')
     const img = clone.querySelector('img')
 
-    // Оставляем только наш кастомный атрибут
     card.setAttribute('data-portfolio-id', item.id)
 
-    img.src = item.image
+    img.src = item.imageSmall
+    img.srcset = `${item.imageSmall} 400w, ${item.imageLarge} 800w`
+    img.sizes = '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 388px'
     img.alt = item.alt
+    img.width = 400
+    img.height = 250
 
     grid.appendChild(clone)
   })
@@ -232,8 +239,10 @@ function showPortfolioModal (projectId) {
   icon.classList.add(...project.modalIcon.split(' '))
 
   const image = modalClone.querySelector('[data-modal-image]')
-  image.src = project.image
+  image.src = project.imageLarge // Используем большое изображение для модалки
   image.alt = project.alt
+  image.width = 800
+  image.height = 500
 
   modalClone.querySelector('[data-modal-description]').textContent =
     project.description
@@ -315,8 +324,19 @@ function showPortfolioModal (projectId) {
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function () {
-  // 1. Рендерим карточки портфолио
-  renderPortfolioGrid()
+  // 1. Сначала отрисовывается первое изображение (уже в HTML)
+
+  // 2. Потом, после отрисовки, рендерим остальные карточки
+  // Рендерим карточки, когда браузер свободен
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(() => {
+      renderPortfolioGrid()
+    })
+  } else {
+    setTimeout(() => {
+      renderPortfolioGrid()
+    }, 1)
+  }
 
   // 2. Навешиваем обработчик клика на карточки (делегирование)
   const grid = document.getElementById('portfolioGrid')
@@ -358,7 +378,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Добавить в конец
   form.appendChild(honeypot)
-
 
   form.addEventListener('submit', e => {
     if (honeypot.value !== '') {
