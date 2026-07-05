@@ -243,6 +243,11 @@ a .logo:hover {
   border: 0;
 }
 
+.main {
+  display: flex;
+  flex-grow: 1;
+}
+
 .masthead,
 section.masthead_2,
 section.page-section_3,
@@ -994,6 +999,12 @@ ul.contact-container {
 }
 
 @media (max-width: 991px) {
+  #mainNav .nav-link::after {
+    display: none;
+  }
+  #mainNav .nav-link:hover::after {
+    display: none;
+  }
   .masthead {
     padding: 9rem 0 3rem;
     min-height: auto;
