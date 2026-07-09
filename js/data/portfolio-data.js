@@ -14,11 +14,11 @@ export const portfolioItems = [
     alt: 'Web-ларёк — интернет-магазин на TypeScript',
     modalIcon: 'fa-solid fa-store',
     description:
-      'SPA интернет-магазин на TypeScript по паттерну MVP с событийной архитектурой.',
+      'SPA интернет-магазин на TypeScript по паттерну MVP с событийной архитектурой. Задеплоен на GitHub Pages.',
     technologies:
       'TypeScript, MVP Pattern, Event Architecture, Custom Validation',
     githubUrl: 'https://github.com/Annenkov-Konstantin/web-larek-frontend',
-    url: ''
+    url: 'https://annenkov-konstantin.github.io/web-larek-frontend/'
   },
   {
     id: 'stellar-burger',
@@ -32,39 +32,40 @@ export const portfolioItems = [
     description: 'React + Redux Toolkit + WebSocket + JWT-авторизация.',
     technologies: 'React, Redux Toolkit, WebSocket, JWT, API Integration',
     githubUrl: 'https://github.com/Annenkov-Konstantin/stellar-burgers',
-    url: ''
+    url: 'https://annenkov-konstantin.github.io/stellar-burgers/'
   },
   {
-  id: 'slozhno-sosredotochitsya',
-  title: 'Сложно сосредоточиться',
-  imageSmall: 'assets/img/portfolio/webp/slozhno_sosredotochitsya-400.webp',
-  imageLarge: 'assets/img/portfolio/webp/slozhno_sosredotochitsya-800.webp',
-  imageWidth: 800,
-  imageHeight: 500,
-  alt: 'Сложно сосредоточиться — адаптивная статья с тремя темами оформления',
-  modalIcon: 'fa-solid fa-brain', // Иконка мозга (тема концентрации)
-  description:
-    'Адаптивная одностраничная статья о концентрации внимания в неоновом стиле. Реализовано три темы оформления (светлая, тёмная, автоматическая) с сохранением выбора в localStorage, мозаичная галерея изображений на CSS Grid и адаптивная типографика через clamp().',
-  technologies:
-    'HTML5, CSS3 (Grid, Flexbox, Custom Properties), Vanilla JavaScript, IBM Plex Mono, prefers-color-scheme, localStorage',
-  githubUrl: 'https://github.com/Annenkov-Konstantin/slozhno-sosredotochitsya-fd',
-  url: 'https://annenkov-konstantin.github.io/slozhno-sosredotochitsya-fd/'
-},
-  {
-    id: 'ono-tebe-nado',
-    title: 'Оно тебе надо',
-    imageSmall: 'assets/img/portfolio/webp/ono_tebe_nado-400.webp',
-    imageLarge: 'assets/img/portfolio/webp/ono_tebe_nado-800.webp',
+    id: 'mesto-project',
+    title: 'Место',
+    imageSmall: 'assets/img/portfolio/webp/mesto-400.webp',
+    imageLarge: 'assets/img/portfolio/webp/mesto-800.webp',
     imageWidth: 800,
     imageHeight: 500,
-    alt: 'Оно тебе надо — лендинг аукциона на HTML5 и CSS3',
-    modalIcon: 'fa-solid fa-gavel',
+    alt: 'Проект Место — SPA с карточками мест и REST API',
+    modalIcon: 'fa-solid fa-map-location-dot',
     description:
-      'Семантический лендинг аукциона с pixel-perfect вёрсткой. Сложная сетка, продвинутая типографика и Desktop-Only подход для сохранения авторской композиции.',
+      'Интерактивное SPA на чистом JavaScript с интеграцией REST API и кастомной валидацией форм. Реализованы добавление карточек с фотографиями, лайки, редактирование профиля, загрузка аватара и модальные окна через <template>. Задеплоен на GitHub Pages.',
     technologies:
-      'HTML5, CSS3, CSS Grid, Flexbox, БЭМ, Pixel-Perfect, Semantic HTML, A11y',
-    githubUrl: 'https://github.com/Annenkov-Konstantin/ono-tebe-nado',
-    url: 'https://annenkov-konstantin.github.io/ono-tebe-nado/'
+      'Vanilla JavaScript (ES6+), HTML5, CSS3, БЭМ, Webpack, REST API, Promise/async-await, Custom Validation',
+    githubUrl: 'https://github.com/Annenkov-Konstantin/mesto-project-ff',
+    url: 'https://annenkov-konstantin.github.io/mesto-project-ff/'
+  },
+  {
+    id: 'slozhno-sosredotochitsya',
+    title: 'Сложно сосредоточиться',
+    imageSmall: 'assets/img/portfolio/webp/slozhno_sosredotochitsya-400.webp',
+    imageLarge: 'assets/img/portfolio/webp/slozhno_sosredotochitsya-800.webp',
+    imageWidth: 800,
+    imageHeight: 500,
+    alt: 'Сложно сосредоточиться — адаптивная статья с тремя темами оформления',
+    modalIcon: 'fa-solid fa-brain', // Иконка мозга (тема концентрации)
+    description:
+      'Адаптивная одностраничная статья о концентрации внимания в неоновом стиле. Реализовано три темы оформления (светлая, тёмная, автоматическая) с сохранением выбора в localStorage, мозаичная галерея изображений на CSS Grid и адаптивная типографика через clamp(). Задеплоен на GitHub Pages.',
+    technologies:
+      'HTML5, CSS3 (Grid, Flexbox, Custom Properties), Vanilla JavaScript, IBM Plex Mono, prefers-color-scheme, localStorage',
+    githubUrl:
+      'https://github.com/Annenkov-Konstantin/slozhno-sosredotochitsya-fd',
+    url: 'https://annenkov-konstantin.github.io/slozhno-sosredotochitsya-fd/'
   },
   {
     id: 'speech-service',
