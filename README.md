@@ -7,6 +7,7 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
 ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![reCAPTCHA](https://img.shields.io/badge/reCAPTCHA-v3-0077B6?style=for-the-badge&logo=google&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Online-brightgreen?style=for-the-badge)
 
 </div>
@@ -36,6 +37,7 @@
 - **JavaScript:** Vanilla JS (ES6+) + jQuery (UI-компоненты Bootstrap)
 - **Фреймворк:** Bootstrap 5 (сетка и утилиты, очищенный через PurgeCSS)
 - **Бэкенд:** PHP (обработчик формы)
+- **Защита от спама:** Google reCAPTCHA v3 (невидимая капча)
 - **Иконки:** Font Awesome, SVG-спрайты
 - **Изображения:** WebP с адаптивными размерами (`srcset`, `sizes`)
 - **Оптимизация:** Preload шрифтов, Critical CSS, Open Graph, Schema.org
@@ -70,10 +72,12 @@
 
 ### 🔒 Безопасность
 
+- **Google reCAPTCHA v3** — невидимая защита от спама с оценкой вероятности бота (score)
 - **Honeypot-защита формы** — скрытое поле, создаваемое динамически через JavaScript
 - **Проверка времени заполнения** — отклонение форм, отправленных быстрее 3 секунд
 - **Серверная валидация** — проверка данных на PHP перед отправкой
 - **Защита от инъекций** — фильтрация специальных символов
+- **Многослойная защита** — комбинация клиентских и серверных проверок
 
 ### 🔍 SEO
 
@@ -139,7 +143,6 @@ pheb-portfolio/
 - [ ] Подключение аналитики (Яндекс.Метрика / Google Analytics)
 - [ ] Critical CSS — встроить стили первого экрана inline
 - [ ] PWA — сделать сайт устанавливаемым
-- [ ] Добавление невидимой капчи для защиты от спама
 
 ## 📬 Контакты
 
