@@ -153,10 +153,6 @@ pheb-portfolio/
 - **Telegram:** [@Knfrei](https://t.me/Knfrei)
 - **GitHub:** [@Annenkov-Konstantin](https://github.com/Annenkov-Konstantin)
 
-## 📚 Источники и оригинальный репозиторий
-
-ℹ️ **Примечание:** Этот репозиторий содержит код проекта, перенесённый для удобства демонстрации в портфолио. Частичная история разработки доступна в [оригинальном репозитории](https://github.com/Annenkov-Konstantin/pheb-portfolio).
-
 <div align="center">
 
 **Если проект был полезен, поставьте ⭐ на GitHub!**
