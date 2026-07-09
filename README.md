@@ -20,7 +20,7 @@
 
 ![Главная страница](assets/img/site-preview.webp)
 
-[🔗 Перейти на сайт](https://pheb.ru/) • [💻 Исходный код](https://github.com/Annenkov-Konstantin/pheb-portfolio)
+[🔗 Перейти на сайт](https://pheb.ru/)
 
 Адаптивный сайт-портфолио Frontend-разработчика. Сайт спроектирован с упором на производительность, доступность (a11y), SEO и чистую семантическую вёрстку.
 
