@@ -65,6 +65,7 @@ html {
   height: 100%;
   scroll-behavior: smooth;
   scroll-padding-top: calc(4.5rem - 1px);
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -1170,4 +1171,12 @@ ul.contact-container {
   overflow: hidden !important;
   opacity: 0 !important;
   pointer-events: none !important;
+}
+
+.grecaptcha-badge {
+  opacity: 0.2;
+}
+
+.grecaptcha-badge:hover {
+  opacity: 1;
 }
